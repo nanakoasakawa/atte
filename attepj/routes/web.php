@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AtteController;
 
+//トップページの表示
 Route::get('/', [AtteController::class, 'index']);
 
-Route::post('/atte/create', [AtteController::class, 'create']);
-Route::post('/atte/update', [AtteController::class, 'update']);
-Route::post('/atte/delete', [AtteController::class, 'delete']);
+//会員登録
+Route::get('/register', [App\Http\Controllers\AtteController::class, 'create']);
+Route::post('/register', [App\Http\Controllers\AtterController::class, 'store']);
