@@ -8,4 +8,4 @@ Route::get('/', [AtteController::class, 'index']);
 
 //会員登録
 Route::get('/register', [App\Http\Controllers\AtteController::class, 'create']);
-Route::post('/register', [App\Http\Controllers\AtterController::class, 'store']);
+Route::post('/register', [App\Http\Controllers\AtteController::class, 'store']);

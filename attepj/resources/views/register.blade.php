@@ -15,7 +15,7 @@
   </tr>
   <tr>
     <td>メールアドレス</td>
-    <td><input type="text" name="mail"></td>
+    <td><input type="text" name="email"></td>
   </tr>
   <tr>
     <td>パスワード</td>
@@ -25,7 +25,7 @@
     <td>パスワード（確認）</td>
     <td><input type="password" name="password_confirmation"></td>
   </tr>
+  <input type="submit" class="form-btn" value="登録">
 </form>
-<input type="submit" class="form-btn" value="登録">
 </body>
 </html>
