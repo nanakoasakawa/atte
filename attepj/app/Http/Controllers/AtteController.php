@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class AtteController extends Controller
 {
-     public function create()
+    public function index()
+    {
+        return view('index');
+    } 
+    
+    public function create()
     {
         return view('register');
     }

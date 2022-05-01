@@ -4,9 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>トップページ</title>
+  <title>Atte</title>
 </head>
 <body>
-  <p>トップページ</p>
+  <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li>
+                    Atte
+                </li>
+                <li>
+                    <a href="" class="header__nav-list-link">ホーム</a>
+                </li>
+                <li>
+                    <a href="" class="header__nav-list-link">日付一覧</a>
+                </li>
+                <li>
+                    <a href="" class="header__nav-list-link">ログアウト</a>
+                </li>
+            </ul>
+        </nav>
+
+  <p>{{ $user->name }}さん、お疲れ様です！</p>
+
+  <footer class="footer">
+        <p>Atte,inc.</p>
+        <a href="detail.html">勤務開始</a>
+        <a href="detail.html">勤務終了</a>
+        <a href="detail.html">休憩開始</a>
+        <a href="detail.html">休憩終了</a>
+    </footer>
 </body>
 </html>
