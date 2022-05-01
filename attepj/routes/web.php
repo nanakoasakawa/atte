@@ -9,3 +9,8 @@ Route::get('/', [AtteController::class, 'index']);
 //会員登録
 Route::get('/register', [App\Http\Controllers\AtteController::class, 'create']);
 Route::post('/register', [App\Http\Controllers\AtteController::class, 'store']);
+Auth::routes([
+    'register' => false,  // ユーザー登録用のルート。デフォルトは true
+]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
