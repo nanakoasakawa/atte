@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Time;
+use App\Models\Rest;
 
 class AtteController extends Controller
 {
@@ -11,7 +13,7 @@ class AtteController extends Controller
     {
         return view('index');
     } 
-    
+
     public function create()
     {
         return view('register');
@@ -26,5 +28,11 @@ class AtteController extends Controller
         ]);
 
         return view('complete', compact('user'));
+    }
+
+    public function date()
+    {
+        $items = Time::Paginate(4);
+        return view('date', ['items' => $items]);
     }
 }

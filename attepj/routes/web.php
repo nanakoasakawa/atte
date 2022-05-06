@@ -14,3 +14,6 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//日付別一覧の表示
+Route::get('/date', [AtteController::class, 'date']);

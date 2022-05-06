@@ -25,13 +25,13 @@
         </nav>
 
   <p>{{ $user->name }}さん、お疲れ様です！</p>
-
-  <footer class="footer">
-        <p>Atte,inc.</p>
         <a href="detail.html">勤務開始</a>
         <a href="detail.html">勤務終了</a>
         <a href="detail.html">休憩開始</a>
         <a href="detail.html">休憩終了</a>
+
+  <footer class="footer">
+        <p>Atte,inc.</p>
     </footer>
 </body>
 </html>
