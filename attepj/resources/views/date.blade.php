@@ -1,4 +1,3 @@
-@extends('layouts.default')
 <style>
     th {
       background-color: #289ADC;
@@ -18,9 +17,7 @@
     height: 30px;
     }
 </style>
-@section('title', '日付別一覧')
 
-@section('content')
 <table>
   <tr>
     <th>Data</th>
@@ -33,5 +30,3 @@
   </tr>
   @endforeach
 </table>
-{{ $items->links() }}
-@endsection

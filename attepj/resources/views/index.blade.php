@@ -24,7 +24,7 @@
             </ul>
         </nav>
 
-  <p>{{ $user->name }}さん、お疲れ様です！</p>
+  <p>{{Auth::$user->name }}さん、お疲れ様です！</p>
         <a href="detail.html">勤務開始</a>
         <a href="detail.html">勤務終了</a>
         <a href="detail.html">休憩開始</a>

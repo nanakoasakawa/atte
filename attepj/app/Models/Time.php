@@ -16,4 +16,11 @@ class Time extends Model
         'start' => 'required',
         'end' => 'required',
     );
+
+    public function getDetail()
+    {
+        // 開始時間・終了時間を取ってくる
+        $item = $this->start . ' ' .$this->end;
+        return $item;
+    }
 }
