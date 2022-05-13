@@ -12,7 +12,7 @@ class AtteController extends Controller
     public function index()
     {
         return view('index');
-    } 
+    }   
 
     public function create()
     {
@@ -32,7 +32,10 @@ class AtteController extends Controller
 
     public function date()
     {
-        $items = Time::Paginate(4);
+        $items = Time::Paginate(5);
         return view('date', ['items' => $items]);
+        $date = date("Y-m-d");
+        }
     }
-}
+
+
