@@ -16,6 +16,7 @@ class TimesTableSeeder extends Seeder
     {
       $param = [
             'user_id' => '2',  
+            'date' => '2022-05-14',
             'start' => '08:00:00',
             'end' => '17:00:00',
         ];

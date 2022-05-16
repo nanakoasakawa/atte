@@ -17,12 +17,4 @@ class Rest extends Model
         'start' => 'required',
         'end' => 'required',
     );
-
-    
-    public function getDetail3()
-    {
-        // 休憩時間を取ってくる
-        $item = $this->end- start;
-        return $item;
-    }
 }

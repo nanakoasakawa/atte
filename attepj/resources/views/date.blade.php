@@ -15,10 +15,10 @@
     <tbody>
       <tr>
         @foreach($items as $item)
-        <td>{{$item->getDetail1()}}</td>
-        <td>{{$item->getDetail2()}}</td>
-        <td>{{$item->getDetail3()}}</td>
-        <td>{{$item->getDetail2()}}</td>
+        <td>{{$item->getstart()}}</td>
+        <td>{{$item->getend()}}</td>
+        <td>{{$item->getrest()}}</td>
+        <td>{{$item->getrest()}}</td>
       </tr>
         @endforeach
     </tbody>

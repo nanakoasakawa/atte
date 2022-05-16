@@ -16,6 +16,7 @@ class CreateTimesTable extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->id();
             $table->foreignID('user_id')->constrained('users');
+            $table->date('date');
             $table->time('start');
             $table->time('end');
         });
