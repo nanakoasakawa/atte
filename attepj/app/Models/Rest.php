@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Rest extends Model
 {
@@ -17,4 +18,5 @@ class Rest extends Model
         'start' => 'required',
         'end' => 'required',
     );
+
 }
