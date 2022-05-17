@@ -11,9 +11,10 @@ class Time extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['start', 'end'];
+    protected $fillable = ['date','start', 'end'];
 
     public static $rules = array(
+        'date' => 'required',
         'start' => 'required',
         'end' => 'required',
     );
@@ -36,8 +37,8 @@ class Time extends Model
     public function getrest()
     {
         //休憩時間を計算する
-        $start = new Carbon($this->hasMany('App\Models\Rest')->first()->start);
-        $end = new Carbon($this->hasMany('App\Models\Rest')->first()->end);
+        $start = new Carbon($this->hasMany('App\Models\Rest','time_id')->first()->start);
+        $end = new Carbon($this->hasMany('App\Models\Rest','time_id')->first()->end);
         $rest = $start->diffInMinutes($end);
         return $rest;
     }

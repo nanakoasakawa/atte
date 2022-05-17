@@ -11,7 +11,7 @@ class Rest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date', 'start', 'end'];
+    protected $fillable = ['start', 'end'];
 
     public static $rules = array(
         'date' => 'required',
