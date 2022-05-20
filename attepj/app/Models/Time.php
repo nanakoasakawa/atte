@@ -33,13 +33,10 @@ class Time extends Model
         return $item;
     }
 
-    
     public function getrest()
     {
         //休憩時間を計算する
-        $start = new Carbon($this->hasMany('App\Models\Rest','time_id')->first()->start);
-        $end = new Carbon($this->hasMany('App\Models\Rest','time_id')->first()->end);
-        $rest = $start->diffInMinutes($end);
-        return $rest;
+        $this->hasMany('App\Models\Rest');
+        return $this;
     }
 }

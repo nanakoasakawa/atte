@@ -14,7 +14,6 @@ class Rest extends Model
     protected $fillable = ['start', 'end'];
 
     public static $rules = array(
-        'date' => 'required',
         'start' => 'required',
         'end' => 'required',
     );

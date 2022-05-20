@@ -30,12 +30,13 @@ class AtteController extends Controller
         return view('complete', compact('user'));
     }
 
-    public function date()
+    public function date(Request $request)
     {
         $items = Time::Paginate(5);
         return view('date', ['items' => $items]);
         $date = date("Y-m-d");
-        }
+    }
+    
     }
 
 
