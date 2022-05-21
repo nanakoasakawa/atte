@@ -17,7 +17,7 @@
         @foreach($items as $item)
         <td>{{$item->getstart()}}</td>
         <td>{{$item->getend()}}</td>
-         @if ($item->rests != null)
+        @if ($item->rests != null)
          <td>{{$item->getrest()}}</td>
          @endif
         <td>{{$item->getrest()}}</td>

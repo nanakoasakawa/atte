@@ -36,7 +36,7 @@ class Time extends Model
     public function getrest()
     {
         //休憩時間を計算する
-        $this->hasMany('App\Models\Rest');
-        return $this;
+        $start = $this->hasMany('App\Models\Rest')->first();
+        return $start;
     }
 }
