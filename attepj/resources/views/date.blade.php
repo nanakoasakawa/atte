@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <th>{{date('Y-m-d')}}</th>
+    <th><input type="date", name="kitanidate", value="2022-04-01",min="2021-01-01",max="2026-01-01"> </th>
   </tr>
 
   <table>

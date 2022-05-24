@@ -51,8 +51,18 @@ class Time extends Model
         $start = new Carbon($this->hasMany('App\Models\Rest')->first()->start);
         $end = new Carbon($this->hasMany('App\Models\Rest')->first()->end);
         $rest = $start -> diffInMinutes($end);
-        $kintai = $time ->diffInMinutes($rest);
+        $kintai = $time - $rest;
         return $kintai;
+    }
 
+    public function date(Request $request)
+    {
+        $date = $request->date;
+        if($date == null){
+            $date = date('Y-m-d');
+        }
+        $item = Time::where('date', $date)->paginate(5);
+        $param = ['date'=> $date,'item'=>$item];
+        return view('date',$param);
     }
 }
