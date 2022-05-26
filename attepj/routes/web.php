@@ -18,3 +18,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //日付別一覧の表示
 Route::get('/date', [AtteController::class, 'date']);
 Route::post('/date', [AtteController::class, 'date']);
+
+//打刻システム
+Route::post('/', [AtteController::class, 'start']);

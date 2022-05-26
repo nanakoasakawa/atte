@@ -24,8 +24,12 @@
             </ul>
         </nav>
 
-  <p>{{Auth::$user->name }}さん、お疲れ様です！</p>
-        <a href="detail.html">勤務開始</a>
+  <p>さん、お疲れ様です！</p>
+        <form action="{{ route('start')}}" method="POST">
+        @csrf
+        @method('POST')
+        <button type="submit">勤務開始</button>
+        </form>
         <a href="detail.html">勤務終了</a>
         <a href="detail.html">休憩開始</a>
         <a href="detail.html">休憩終了</a>

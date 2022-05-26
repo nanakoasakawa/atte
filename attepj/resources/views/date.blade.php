@@ -1,6 +1,10 @@
 <table>
   <tr>
-    <th><input type="date", name="kitanidate", value="2022-04-01",min="2021-01-01",max="2026-01-01"> </th>
+    <form method="POST" action="/date">
+      @csrf
+      <th><input type="date", name="kitanidate", value=Carbon::today(),min="2021-01-01",max="2026-01-01",value={{ $date }}>
+      <input type="submit" /> </th>
+</form>
   </tr>
 
   <table>

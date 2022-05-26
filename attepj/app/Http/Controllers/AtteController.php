@@ -32,11 +32,18 @@ class AtteController extends Controller
 
     public function date(Request $request)
     {
-        $items = Time::Paginate(5);
-        return view('date', ['items' => $items]);
-        $date = date("Y-m-d");
+        $date = $request->kintaidate;
+        if($date == null){
+            $date = date('Y-m-d');
+        }
+        $items = Time::where('date', $date)->paginate(5);
+        $param = ['date'=> $date,'items'=>$items];
+        return view('date',$param);
     }
-    
+
+    public function start(){
+        return view("a");
+    }
     }
 
 

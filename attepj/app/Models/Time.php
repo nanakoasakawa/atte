@@ -55,14 +55,8 @@ class Time extends Model
         return $kintai;
     }
 
-    public function date(Request $request)
+    public function user()
     {
-        $date = $request->date;
-        if($date == null){
-            $date = date('Y-m-d');
-        }
-        $item = Time::where('date', $date)->paginate(5);
-        $param = ['date'=> $date,'item'=>$item];
-        return view('date',$param);
+        $this->belongsTo(User::class);
     }
 }
