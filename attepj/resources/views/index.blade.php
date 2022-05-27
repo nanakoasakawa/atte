@@ -25,7 +25,7 @@
         </nav>
 
   <p>さん、お疲れ様です！</p>
-        <form action="{{ route('start')}}" method="POST">
+        <form action="{{ route('index')}}" method="POST">
         @csrf
         @method('POST')
         <button type="submit">勤務開始</button>

@@ -2,7 +2,7 @@
   <tr>
     <form method="POST" action="/date">
       @csrf
-      <th><input type="date", name="kitanidate", value=Carbon::today(),min="2021-01-01",max="2026-01-01",value={{ $date }}>
+      <th><input type="date", name="kitanidate", value=Carbon::today(),min="2021-01-01",max="2026-01-01">
       <input type="submit" /> </th>
 </form>
   </tr>
