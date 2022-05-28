@@ -2,7 +2,7 @@
   <tr>
     <form method="POST" action="/date">
       @csrf
-      <th><input type="date", name="kitanidate", value=Carbon::today(),min="2021-01-01",max="2026-01-01">
+      <th><input type="date", name="kintaidate", value="{{$date}}",min="2021-01-01",max="2026-01-01">
       <input type="submit" /> </th>
 </form>
   </tr>
@@ -17,15 +17,15 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($items as $item)
       <tr>
-        @foreach($items as $item)
         <td>{{$item->getstart()}}</td>
         <td>{{$item->getend()}}</td>
         <td>{{$item->getrest()}}</td>
         <td>{{$item->gettime()}}</td>
+      </tr>
         @endforeach
 
-      </tr>
 
     </tbody>
   </table>

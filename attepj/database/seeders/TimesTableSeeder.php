@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Time;
 
 class TimesTableSeeder extends Seeder
 {
@@ -14,12 +15,6 @@ class TimesTableSeeder extends Seeder
      */
     public function run()
     {
-      $param = [
-            'user_id' => '2',  
-            'date' => '2022-05-14',
-            'start' => '08:00:00',
-            'end' => '17:00:00',
-        ];
-        DB::table('times')->insert($param);
+     Time::factory()->count(20)->create();
     }
 }

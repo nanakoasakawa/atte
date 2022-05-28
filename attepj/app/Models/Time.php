@@ -18,6 +18,9 @@ class Time extends Model
         'start' => 'required',
         'end' => 'required',
     );
+    
+    //timestampを不要にした
+    public $timestamps = false;
 
     public function getstart()
     {
@@ -36,6 +39,9 @@ class Time extends Model
     public function getrest()
     {
         //休憩時間を計算する
+        if($this->hasMany('App\Models\Rest')->first()==null){
+            return 0;
+        }
         $start = new Carbon($this->hasMany('App\Models\Rest')->first()->start);
         $end = new Carbon($this->hasMany('App\Models\Rest')->first()->end);
         $rest = $start -> diffInMinutes($end);
@@ -45,6 +51,9 @@ class Time extends Model
     public function gettime()
     {
         //勤務時間を計算する
+        if($this->hasMany('App\Models\Rest')->first()==null){
+        return 0;
+        }
         $timestart = new Carbon($this->start);
         $timeend = new Carbon($this->end);
         $time = $timestart -> diffInMinutes($timeend);
