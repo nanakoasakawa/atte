@@ -5,16 +5,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Rest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date', 'start', 'end'];
+    protected $fillable = ['start', 'end'];
 
     public static $rules = array(
-        'date' => 'required',
         'start' => 'required',
         'end' => 'required',
     );
+
 }

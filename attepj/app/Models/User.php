@@ -18,4 +18,9 @@ class User extends Authenticatable
         'email' => 'required',
         'password' => 'required'
     );
+
+    public function time()
+    {
+        return $this->hasMany(Time::class);
+    }
 }
