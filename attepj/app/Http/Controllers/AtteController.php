@@ -41,8 +41,14 @@ class AtteController extends Controller
         return view('date',$param);
     }
 
-    public function start(){
-        return view("a");
+    //勤務開始時間の登録
+    public function startadd(Request $request){
+        $param=[
+            'date'=>$request->date,
+            'start'=>$request->start,
+        ];
+        DB::table('times')->insert($param);
+        return redirect('/');
     }
     }
 
