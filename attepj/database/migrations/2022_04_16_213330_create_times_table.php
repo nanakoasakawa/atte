@@ -17,8 +17,8 @@ class CreateTimesTable extends Migration
             $table->id();
             $table->foreignID('user_id')->constrained('users');
             $table->date('date');
-            $table->time('start');
-            $table->time('end');
+            $table->time('start')->nullable();
+            $table->time('end')->nullable();
         });
     }
 

@@ -8,6 +8,7 @@ use App\Models\Time;
 use App\Models\Rest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AtteController extends Controller
 {
@@ -46,9 +47,10 @@ class AtteController extends Controller
     //勤務開始時間の登録
     public function startadd(Request $request){
         $param=[
-            'user_id'=>$request->user_id,
+            'user_id'=>Auth::$user->user_id,
             'date'=>new Carbon(),
             'start'=>new Carbon(),
+            'end'=>empty($value) ? null : $value,
         ];
         DB::table('times')->insert($param);
         return redirect('/');
