@@ -44,15 +44,49 @@ class AtteController extends Controller
         return view('date',$param);
     }
 
-    //勤務開始時間の登録
-    public function startadd(Request $request){
+        //勤務開始時間の登録
+    public function timein(Request $request){
+        $user = Auth::user();
         $param=[
-            'user_id'=>Auth::$user->user_id,
+            'user_id'=>$user->id,
             'date'=>new Carbon(),
             'start'=>new Carbon(),
             'end'=>empty($value) ? null : $value,
         ];
         DB::table('times')->insert($param);
+        return redirect('/');
+    }
+
+            //勤務終了時間の登録
+    public function timeout(Request $request){
+        $user = Auth::user();
+        $param=[
+            'user_id'=>$user->id,
+            'date'=>new Carbon(),
+            'start'=>empty($value) ? null : $value,
+            'end'=>new Carbon(),
+        ];
+        DB::table('times')->insert($param);
+        return redirect('/');
+    }
+
+            //休憩開始時間の登録
+    public function restin(Request $request){
+        $param=[
+            'start'=>new Carbon(),
+            'end'=>empty($value) ? null : $value,
+        ];
+        DB::table('rests')->insert($param);
+        return redirect('/');
+    }
+
+                //休憩終了時間の登録
+    public function restout(Request $request){
+        $param=[
+            'start'=>empty($value) ? null : $value,
+            'end'=>new Carbon(),
+        ];
+        DB::table('rests')->insert($param);
         return redirect('/');
     }
     }

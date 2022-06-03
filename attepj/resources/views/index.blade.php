@@ -30,9 +30,21 @@
         @method('POST')
         <button type="submit">勤務開始</button>
         </form>
-        <a href="detail.html">勤務終了</a>
-        <a href="detail.html">休憩開始</a>
-        <a href="detail.html">休憩終了</a>
+        <form action="/" method="POST">
+        @csrf
+        @method('POST')
+        <button type="submit">勤務終了</button>
+        </form>
+        <form action="/" method="POST">
+        @csrf
+        @method('POST')
+        <button type="submit">休憩開始</button>
+        </form>
+        <form action="/" method="POST">
+        @csrf
+        @method('POST')
+        <button type="submit">休憩終了</button>
+        </form>
 
   <footer class="footer">
         <p>Atte,inc.</p>
