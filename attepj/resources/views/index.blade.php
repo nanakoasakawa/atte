@@ -25,22 +25,22 @@
         </nav>
 
   <p>さん、お疲れ様です！</p>
-        <form action="/" method="POST">
+        <form action="/timein" method="POST">
         @csrf
         @method('POST')
         <button type="submit">勤務開始</button>
         </form>
-        <form action="/" method="POST">
+        <form action="/timeout" method="POST">
         @csrf
         @method('POST')
         <button type="submit">勤務終了</button>
         </form>
-        <form action="/" method="POST">
+        <form action="/restin" method="POST">
         @csrf
         @method('POST')
         <button type="submit">休憩開始</button>
         </form>
-        <form action="/" method="POST">
+        <form action="/restout" method="POST">
         @csrf
         @method('POST')
         <button type="submit">休憩終了</button>

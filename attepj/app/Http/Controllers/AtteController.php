@@ -46,9 +46,8 @@ class AtteController extends Controller
 
         //勤務開始時間の登録
     public function timein(Request $request){
-        $user = Auth::user();
         $param=[
-            'user_id'=>$user->id,
+            'user_id'=>Auth::id(),
             'date'=>new Carbon(),
             'start'=>new Carbon(),
             'end'=>empty($value) ? null : $value,

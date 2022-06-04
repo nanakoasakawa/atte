@@ -20,7 +20,7 @@ Route::get('/date', [AtteController::class, 'date']);
 Route::post('/date', [AtteController::class, 'date']);
 
 //打刻システム
-Route::post('/', [AtteController::class, 'timein']);
-Route::post('/', [AtteController::class, 'timeout']);
-Route::post('/', [AtteController::class, 'restin']);
-Route::post('/', [AtteController::class, 'restout']);
+Route::post('/timein', [AtteController::class, 'timein']);
+Route::post('/timeout', [AtteController::class, 'timeout']);
+Route::post('/restin', [AtteController::class, 'restin']);
+Route::post('/restout', [AtteController::class, 'restout']);
