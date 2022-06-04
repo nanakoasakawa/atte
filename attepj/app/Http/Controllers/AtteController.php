@@ -58,14 +58,9 @@ class AtteController extends Controller
 
             //勤務終了時間の登録
     public function timeout(Request $request){
-        $user = Auth::user();
-        $param=[
-            'user_id'=>$user->id,
-            'date'=>new Carbon(),
-            'start'=>empty($value) ? null : $value,
-            'end'=>new Carbon(),
-        ];
-        DB::table('times')->insert($param);
+        $time=Time::where('user_id','=',Auth::id())
+                  ->where('date','=',new Carbon('today'))
+                  ->update(['end'=>new Carbon()]);
         return redirect('/');
     }
 
