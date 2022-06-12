@@ -77,11 +77,11 @@ class AtteController extends Controller
 
                 //休憩終了時間の登録
     public function restout(Request $request){
-        $param=[
-            'start'=>empty($value) ? null : $value,
-            'end'=>new Carbon(),
-        ];
-        DB::table('rests')->insert($param);
+        $time=Time::where('user_id','=',Auth::id())
+                  ->where('date','=',new Carbon('today'))
+                  ->first();
+        $restend=$time->hasMany('App\Models\Rest')->where('end','=',null)
+                 ->update(['end'=>new Carbon()]);
         return redirect('/');
     }
     }

@@ -42,7 +42,7 @@ class Time extends Model
         if($this->hasMany('App\Models\Rest')->first()==null){
             return 0;
         }
-        $start = new Carbon($this->hasMany('App\Models\Rest')->first()->start);
+        $start = new Carbon($this->hdelasMany('App\Models\Rest')->first()->start);
         $end = new Carbon($this->hasMany('App\Models\Rest')->first()->end);
         $rest = $start -> diffInMinutes($end);
         return $rest;
