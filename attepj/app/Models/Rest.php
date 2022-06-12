@@ -12,6 +12,9 @@ class Rest extends Model
     use HasFactory;
 
     protected $fillable = ['start', 'end'];
+    
+    //timestampを不要にした
+    public $timestamps = false;
 
     public static $rules = array(
         'start' => 'required',
