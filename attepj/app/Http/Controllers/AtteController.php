@@ -67,6 +67,7 @@ class AtteController extends Controller
             //休憩開始時間の登録
     public function restin(Request $request){
         $param=[
+            'time_id'=>Time::where('date',new Carbon('today'))->first()->id,
             'start'=>new Carbon(),
             'end'=>empty($value) ? null : $value,
         ];
