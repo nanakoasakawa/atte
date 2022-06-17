@@ -24,7 +24,7 @@
             </ul>
         </nav>
 
-  <p>さん、お疲れ様です！</p>
+  <p>{{Auth::$user->name}}さん、お疲れ様です！</p>
         <form action="/timein" method="POST">
         @csrf
         @method('POST')
